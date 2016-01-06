@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Record Collextion</title>
+    <title>DYS Team Builder</title>
 
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,18 +13,46 @@
     <h1>Damn you, Stefano!</h1>
 	<p>Select available players:</p>
 
-	<form>
 	<ul>
 		<li>
-			<input type="checkbox" value="Lex"> 
-			Lex
+			<input type="checkbox" name="player" value="Lex" checked> 
+			Alexis
 		</li>
 		<li>
-			<input type="checkbox" value="Andrew"> 
+			<input type="checkbox" name="player" value="Andrew" checked> 
 			Andrew
 		</li>
+		<li>
+			<input type="checkbox" name="player" value="Claire" checked> 
+			Claire
+		</li>
+		<li>
+			<input type="checkbox" name="player" value="Debbie" checked> 
+			Debbie
+		</li>
+		<li>
+			<input type="checkbox" name="player" value="Don" checked> 
+			Don
+		</li>
+		<li>
+			<input type="checkbox" name="player" value="Jodie" checked> 
+			Jodie
+		</li>
+		<li>
+			<input type="checkbox" name="player" value="John" checked> 
+			John
+		</li>
+		<li>
+			<input type="checkbox" name="player" value="Zach" checked> 
+			Zach
+		</li>
 	</ul>
-	<input type="submit" onclick="readInputs();">
+	<input type="button" value="Build Teams!" id="teamBuilder">
+	
+	<p><b>Damn You Stefano:</b>
+	<span id="stefano"></span></p>
+	<p><b>Damn You Stefani:</b>
+	<span id="stefani"></span></p>
 	
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>

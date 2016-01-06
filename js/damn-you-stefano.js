@@ -1,37 +1,57 @@
-function $(id) { return document.getElementById(id); }
+$(document).ready(function() {
+    
+	$("#teamBuilder").click(function(e){
+        e.preventDefault();
+		showSelectedValues();
+     });
+});
+function showSelectedValues()
+{
+	var playerArray = [];
+	$("input[name=player]:checked").each(function() {
+		playerArray.push($(this).val()); //push each val into the array
+	});
 
-function readInputs() {
-	var theElementCount = $('elems').value;
-	var theMaxValue = $('max').value;
-	
-	if (isNaN(theElementCount) || isNaN(theElementCount)) {return false;}
-	else {
-		theElementCount = parseFloat(theElementCount);
-		theMaxValue = parseFloat(theMaxValue);
-		
-	}
-		listedArray = generateArray(theElementCount,theMaxValue);
-		writeArray(listedArray);
+	if (playerArray.length > 5) {
+		buildTeams(playerArray);
+	} 
 }
 
-function generateArray(x,y) {
-	var elementCount = x;
-	var maxValue = y;
-	
-	var theNumbers = new Array();
-	for (i = 0; i < elementCount; i++) {
-				theNumbers[i] = parseInt(Math.random() * maxValue);
-				$('overBWrite').innerHTML = theNumbers.join(" - ");
+function buildTeams(playerArray) {
+	var damnYouStefanoMembers = [];
+	var otherTeam = [];
+	var usedNumbers = [];
+	var cnt = 0;
+	do {
+		var randNum = getRandomInt(0, (playerArray.length - 1));
+		if (!checkInArray(randNum, usedNumbers)) {
+			usedNumbers[cnt] = randNum;
+			damnYouStefanoMembers[cnt] = playerArray[randNum];
+			cnt++;
 		}
-	return theNumbers;
+	} while (cnt < 5);
+	
+	var newCnt = 0;
+	for (var x = 0; x < playerArray.length; x++) {
+		if (!checkInArray(x, usedNumbers)) {
+			otherTeam[newCnt] = playerArray[x];
+			newCnt++;
+		}
+	}
+	
+	$("#stefano").html(damnYouStefanoMembers.toString());
+	$("#stefani").html(otherTeam.toString());
+	
 }
 
-function writeArray(theNumbers) {
-	var vals = new Array();
-	vals = theNumbers;
-	$('overBWrite2').innerHTML = "<ul>";
-	for (i = 0; i < vals.length; i++) {
-			$('overBWrite2').innerHTML += "<li>" + vals[i] + "</li>";
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function checkInArray(value, theArray) {
+	for (var y = 0; y < theArray.length; y++) {
+		if (theArray[y] == value) {
+			return true;
+		}
 	}
-	$('overBWrite2').innerHTML += "</ul>";	
 }
