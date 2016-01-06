@@ -1,0 +1,28 @@
+{
+  "name": "damn-you-stefano",
+  "version": "1.0.0",
+  "description": "Divides available team members into groups of 5 or less",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexstephen/damn-you-stefano.git"
+  },
+  "keywords": [
+    "trivia",
+    "team",
+    "assignment"
+  ],
+  "author": "Alexis Dicks-Stephen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lexstephen/damn-you-stefano/issues"
+  },
+  "homepage": "https://github.com/lexstephen/damn-you-stefano#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "less": "^2.5.3"
+  }
+}

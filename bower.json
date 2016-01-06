@@ -1,0 +1,27 @@
+{
+  "name": "damn-you-stefano",
+  "description": "Divides available team members into groups of 5 or less",
+  "main": "index.html",
+  "authors": [
+    "Alexis Dicks-Stephen"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "trivia",
+    "team",
+    "assignment"
+  ],
+  "homepage": "https://github.com/lexstephen/damn-you-stefano",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.6"
+  }
+}
