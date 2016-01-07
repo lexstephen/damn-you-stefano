@@ -6729,3 +6729,11 @@ button.close {
   text-align: right;
   background-color: #05040c;
 }
+.playa {
+  width: 80px;
+  display: inline-block;
+  text-align: center;
+  background-color: #eee;
+  padding: 3px;
+  margin: 5px;
+}
